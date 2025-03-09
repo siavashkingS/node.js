@@ -1,5 +1,13 @@
 {
   "dependencies": {
     "cowsay": "^1.6.0"
+  },
+  "name": "nodejs",
+  "scripts": {
+    "test": "echo \"Error: no task specified\" && exit 1",
+    "start": "node cowsay.js"
+  },
+  "bin": {
+    "my-test-command": "cowsay.js"
   }
 }
