@@ -11,5 +11,21 @@ rl.question('How do you feel? ',(answer)=>{
     else if(answer=='bad'){
         console.log('I hope you get good soon');
     }
-    rl.close();
+    console.log('now enter the names you want me to add:')
+})
+var person=[];
+rl.on('line',(input)=>{
+    if(input.length<3){
+        console.log('please enter a valid name');
+        return;
+    }
+    if(input=='exit'){
+        console.log('see you later')
+        rl.close();
+    }
+else{
+    person.push(input);
+    console.log(`add ${input} to the list`)
+    console.log('we currently have '+person.length+' person')
+    }   
 })
