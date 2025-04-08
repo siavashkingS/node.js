@@ -1,12 +1,1 @@
-﻿{
-  "dependencies": {
-    "cowsay": "^1.6.0",
-    "dotenv": "^16.4.7",
-    "mysql": "^2.18.1",
-    "readline": "^1.3.0"
-  },
-  "name": "nodeproject",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js"
-}
+{"dependencies":{"cowsay":"^1.6.0","dotenv":"^16.4.7","mysql":"^2.18.1","readline":"^1.3.0","readline-sync":"^1.4.10"},"name":"nodeproject","version":"1.0.0","description":"","main":"index.js"}
