@@ -11,3 +11,5 @@ connection.js and .env files is for connecting to database.
 table_creation.js file is for creating a table and put some random data in it,it used for the search function.
 
 the search.js is a commandline interface for searching in the products table we created in table_creation file.
+
+request.js is a simple practise for using axios package to request a public api
