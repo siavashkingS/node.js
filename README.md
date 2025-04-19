@@ -13,3 +13,5 @@ table_creation.js file is for creating a table and put some random data in it,it
 the search.js is a commandline interface for searching in the products table we created in table_creation file.
 
 request.js is a simple practise for using axios package to request a public api
+
+the first_api folder contain a project for practising in create servers. its contain a server.js file that handle if a request is need to responsed with aqi or static file 
