@@ -5,6 +5,7 @@ class user{
 
     sayHi(){
         console.log('hi everyone');
+        return { message: "Hi everyone!" };
     }
 }
 
