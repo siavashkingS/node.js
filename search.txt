@@ -1,0 +1,17 @@
+require('dotenv').config();
+const db=require('./connection');
+const readline= require('readline');
+var rl=readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+rl.question('enter your search term:  ',(answer)=>{
+    db.query(
+        `SELECT * FROM products 
+         WHERE name LIKE ? OR description LIKE ? OR category LIKE ?`,
+        [`%${answer}%`, `%${answer}%`, `%${answer}%`]
+        ,(error,result,fields)=>{
+        if (error) throw error;
+        console.log(result);
+    })
+})
