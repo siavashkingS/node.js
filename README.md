@@ -26,6 +26,7 @@ Handles connection to a MySQL database using credentials stored in environment v
 Creates a `products` table and inserts random data — used to test database search queries.
 
 ### 🔍 search.js
+![Search menu screenshot](./search.png)
 A command-line tool that searches the `products` table based on user input.
 
 ---
@@ -67,6 +68,31 @@ Starting to learn and build small applications using the Express framework.
 A simple signup form that collects a username, email, and password, and saves it to a MySQL database.
 
 ---
+
+---
+
+## 📋 Todo List App (MySQL + Node.js)
+
+![Todo Screenshot](./todo1.png)
+
+A simple, full-stack todo list built using plain Node.js, MySQL, and basic HTML — no frameworks or libraries.
+
+### ✨ Features
+- Add tasks using an input form
+- View current todos
+- Mark tasks as completed
+- Delete tasks
+- Server built using native `http` module
+- Database interaction via MySQL (no ORM)
+
+### 📁 Files
+- `server.js`: Main application logic
+- `connection.js`: MySQL connection module
+
+> This is a great project to bring together everything learned about HTTP handling, routing, forms, databases, and dynamic HTML rendering.
+
+---
+
 
 ## 📌 Notes
 
