@@ -21,3 +21,5 @@ the mongoconnection and mongo files is about connecting and practicing with mong
 the uploadfile.js is a simple form for uploading and saving files
 
 the express folder is me starting to learn to create express apps
+
+the signup.js is a simple signup form that save the user data in mysql database
