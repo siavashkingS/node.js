@@ -27,6 +27,7 @@ Creates a `products` table and inserts random data — used to test database sea
 
 ### 🔍 search.js
 ![Search menu screenshot](./search.png)
+
 A command-line tool that searches the `products` table based on user input.
 
 ---
