@@ -17,3 +17,7 @@ request.js is a simple practise for using axios package to request a public api
 the first_api folder contain a project for practising in create servers. its contain a server.js file that handle if a request is need to responsed with aqi or static file 
 
 the mongoconnection and mongo files is about connecting and practicing with mongodb in nodejs
+
+the uploadfile.js is a simple form for uploading and saving files
+
+the express folder is me starting to learn to create express apps

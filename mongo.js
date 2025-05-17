@@ -17,4 +17,20 @@ const insertProduct = async () => {
   }
 };
 
-insertProduct();
+const readdata = async ()=>{
+    try {
+        const db = await dbPromise; // Wait for the connection
+        const result = await db.collection('air').find({
+            ratings:5
+        }).toArray();
+        console.log(result.map((result)=>result.name));
+      } catch (err) {
+        console.error('Error finding:', err);
+      } finally {
+        // Optional: Close the connection when done
+        // await client.close();
+      }
+}
+
+//insertProduct();
+readdata();
