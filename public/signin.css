@@ -1,0 +1,40 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff3e6;
+    padding: 40px;
+    color: #333;
+    text-align: center;
+  }
+  
+  form {
+    background-color: #fff;
+    padding: 20px;
+    display: inline-block;
+    border-radius: 8px;
+    border: 2px solid #ff9933;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 250px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+  }
+  
+  input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff9933;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #e67a00;
+  }

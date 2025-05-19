@@ -1,5 +1,7 @@
 const http = require('http');
 const qs = require('querystring');
+const fs = require('fs');
+const path = require('path');
 require('dotenv').config();
 const connection = require('./connection');
 connection.query(`
@@ -11,23 +13,45 @@ CREATE TABLE IF NOT EXISTS todos (
 function renderHTML(todos) {
   const list = todos.map(todo => `
     <li>
-      ${todo.completed ? `<s>${todo.title}</s>` : todo.title}
-      [<a href="/complete?id=${todo.id}">complete</a>]
-      [<a href="/delete?id=${todo.id}">delete</a>]
+      <span class="${todo.completed ? 'completed' : ''}">${todo.title}</span>
+      <div class="actions">
+        <a href="/complete?id=${todo.id}" class="btn complete">Complete</a>
+        <a href="/delete?id=${todo.id}" class="btn delete">Delete</a>
+      </div>
     </li>
   `).join('');
 
   return `
-    <h2> My Todo List</h2>
-    <form method="POST" action="/add">
-      <input type="text" name="title" placeholder="Enter task" required />
-      <input type="submit" value="Add" />
-    </form>
-    <ul>${list}</ul>
+    <!DOCTYPE html>
+    <html>
+    <head>
+  <title>Todo List</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+    <body>
+      <h2> My Todo List</h2>
+      <form method="POST" action="/add">
+        <input type="text" name="title" placeholder="Enter task" required />
+        <input type="submit" value="Add" />
+      </form>
+      <ul>${list}</ul>
+    </body>
+    </html>
   `;
 }
-
 const server = http.createServer((req, res) => {
+  if (req.method === 'GET' && req.url === '/style.css') {
+    const filePath = path.join(__dirname, 'public', 'style.css');
+    fs.readFile(filePath, (err, data) => {
+      if (err) {
+        res.writeHead(500);
+        return res.end('Error loading CSS');
+      }
+      res.writeHead(200, { 'Content-Type': 'text/css' });
+      res.end(data);
+    });
+    return;
+  }
   if (req.method === 'GET' && req.url === '/') {
     connection.query('SELECT * FROM todos', (err, results) => {
       if (err) {

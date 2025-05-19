@@ -1,11 +1,26 @@
 const http = require('http');
 const qs = require('querystring');
+const fs = require('fs');
+const path = require('path');
 require('dotenv').config();
 const connection = require('./connection');
 const server = http.createServer((req, res) => {
+  if (req.method === 'GET' && req.url === '/signup.css') {
+    const filePath = path.join(__dirname, 'public', 'signup.css');
+    fs.readFile(filePath, (err, data) => {
+      if (err) {
+        res.writeHead(500);
+        return res.end('Error loading CSS');
+      }
+      res.writeHead(200, { 'Content-Type': 'text/css' });
+      res.end(data);
+    });
+    return;
+  }
   if (req.method === 'GET') {
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end(`
+      <head><link rel="stylesheet" href="/signup.css" /></head>
       <h2>Signup Form</h2>
       <form method="POST" action="/">
         Username: <input type="text" name="username" required /><br><br>
@@ -41,7 +56,7 @@ const server = http.createServer((req, res) => {
         }
 
         res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(`<h3>✅ Signup successful for user: ${username}</h3>`);
+        res.end(`<h3> Signup successful for user: ${username}</h3>`);
       });
     });
   }

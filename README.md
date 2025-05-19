@@ -61,12 +61,35 @@ A basic file upload form using Node.js and the `formidable` package — saves up
 ### express/
 Starting to learn and build small applications using the Express framework.
 
----
+--
 
 ## 🔐 Authentication Practice
 
-### signup.js
-A simple signup form that collects a username, email, and password, and saves it to a MySQL database.
+### 📝 signup.js
+
+![Todo Screenshot](./signup.png)
+
+A simple sign-up form that collects a username, email, and password, and saves it to a MySQL database.
+
+- Uses native `http` module and `querystring` to handle form data.
+- Stores user credentials in a `users` table.
+- Styled with `signup.css` using an orange theme.
+
+### 🔑 signin.js
+
+![Todo Screenshot](./signin.png)
+
+A basic login form that allows users to sign in using either their email or username.
+
+- Validates input against saved credentials in MySQL.
+- Returns a welcome message on success or an error message on failure.
+- Styled with `signin.css` and uses the same warm theme for consistency.
+
+📁 Styles:
+- `public/signup.css`
+- `public/signin.css`
+
+> This setup demonstrates manual user authentication flow without any external frameworks.
 
 ---
 
