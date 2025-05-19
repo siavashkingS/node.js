@@ -97,7 +97,7 @@ A basic login form that allows users to sign in using either their email or user
 
 ## 📋 Todo List App (MySQL + Node.js)
 
-![Todo Screenshot](./todo1.png)
+![Todo Screenshot](./todo2.png)
 
 A simple, full-stack todo list built using plain Node.js, MySQL, and basic HTML — no frameworks or libraries.
 
